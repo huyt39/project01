@@ -15,7 +15,7 @@ app.get("/",(req,res)=>{
 
 app.get("/products",(req,res)=>{
     //res.send("Trang danh sach san pham");
-    res.render("client/pages/products/index.pug")
+    res.render("client/pages/products/index.po")
 })
 
 app.listen(port, () => {
