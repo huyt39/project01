@@ -1,10 +1,12 @@
 const express= require("express"); //nhung express
 const router = express.Router(); //ham Router trong thu vien express co chuc nang dinh nghia route
 
-router.get("/",(req,res)=>{
-    //res.send("Trang danh sach san pham");
-    res.render("client/pages/products/index.pug")
-});
+const controller = require("../../controllers/client/product.controller.js"); //nhung file product.controller
+
+router.get("/",controller.index);
+// router.get("/detail",controller.detail);
+// router.get("/edit",controller.edit);
+// router.get("/create",controller.create);
 // router.get("/detail",(req,res)=>{
 //     res.send("Trang chi tiết sản phẩm");
 // });
