@@ -12,6 +12,9 @@ const port = process.env.PORT;
 app.set("views", "./views"); //giao dien
 app.set("view engine", "pug");
 
+app.use(express.static('public')); //de nhung file tinh vao, day la code cua FE
+
+
 //Routes client:
 routesClient(app);
 
