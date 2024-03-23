@@ -1,6 +1,8 @@
 //[TUONG UNG VOI PHUONG THUC GET] /products/
 module.exports.index = (req,res)=>{
-    res.render("client/pages/products/index.pug");
+    res.render("client/pages/products/index.pug",{
+        pageTitle: "Danh sách sản phẩm"
+    });
 }//ten ham la index
 
 //[TUONG UNG VOI PHUONG THUC GET] /products/detail
