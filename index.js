@@ -1,7 +1,13 @@
 const express = require("express"); //nhung express
+const dotenv = require("dotenv"); //import dotenv tu thu vien dotenv
 const routesClient=require("./routes/client/index.route.js"); //loi ham route client vao
+
+dotenv.config(); //de cau hinh
+
 const app = express(); //khoi tao app dung express
-const port = 3000; //khoi tao cong
+
+const port = process.env.PORT;
+//  const port = 3000; //khoi tao cong
 
 app.set("views", "./views"); //giao dien
 app.set("view engine", "pug");
