@@ -7,16 +7,17 @@ block main
         .col-12
           +box-head("Danh sách sản phẩm")
 
-    .row
-      .col-4.mb-3
-        .product-item
-          .inner-image
-            img(src="https://genk.mediacdn.vn/2019/12/7/photo-1-15756898859271520501552.jpeg", alt="iPhone 9")
-          .inner-content
-            h3.inner-title iPhone 9
-            .inner-price-new 80$
-            .inner-price-old 100$
-            .inner-discount -20%
-              
-              
+    .row  
+      each item in products 
+        .col-4.mb-3  
+          .product-item
+            .inner-image
+              img(src=item.thumbnail, alt=item.title)
+            .inner-content
+              h3.inner-title #{item.title}
+              .inner-price-new #{item.priceNew}$
+              .inner-price-old #{item.price}$
+              .inner-discount #{item.discountPercentage}%
+                
+              //- moi 1 col4 la 1 item=>lap qua tung item
           
