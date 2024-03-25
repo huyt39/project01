@@ -1,8 +1,17 @@
 const express = require("express"); //nhung express
 const dotenv = require("dotenv"); //import dotenv tu thu vien dotenv
+// const mongoose = require("mongoose");
 const routesClient=require("./routes/client/index.route.js"); //loi ham route client vao
+const database = require("./config/database.js");
 
 require("dotenv").config(); //de cau hinh
+
+database.connect();
+
+// mongoose.connect('mongodb://localhost:27017/product-management')
+// mongoose.connect(process.env.MONGO_URL)
+//     .then(() => console.log('Connected!'));
+
 
 const app = express(); //khoi tao app dung express
 
