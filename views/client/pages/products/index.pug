@@ -1,4 +1,22 @@
 extends ../../layouts/default.pug 
+include ../../mixins/box-head.pug
 
 block main
-    h1 Trang danh sách sản phẩm
+    .container.my-3 
+      .row
+        .col-12
+          +box-head("Danh sách sản phẩm")
+
+    .row
+      .col-4.mb-3
+        .product-item
+          .inner-image
+            img(src="https://cdn.hoanghamobile.com/i/preview/Uploads/2023/09/13/iphone-15-pink-pure-back-iphone-15-pink-pure-front-2up-screen-usen_638301948854041434.png", alt="iPhone 15")
+          .inner-content
+            h3.inner-title iPhone 15
+            .inner-price-new 200$
+            .inner-price-old 250$
+            .inner-discount -20%
+              
+              
+          
