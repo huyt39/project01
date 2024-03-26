@@ -1,12 +1,14 @@
 const express = require("express"); //nhung express
 const dotenv = require("dotenv"); //import dotenv tu thu vien dotenv
 // const mongoose = require("mongoose");
-const routesClient=require("./routes/client/index.route.js"); //loi ham route client vao
 const database = require("./config/database.js");
 
 require("dotenv").config(); //de cau hinh
 
 database.connect();
+
+const routesClient=require("./routes/client/index.route.js"); //loi ham route client vao
+const routesAdmin=require("./routes/admin/index.route.js");
 
 // mongoose.connect('mongodb://localhost:27017/product-management')
 // mongoose.connect(process.env.MONGO_URL)
@@ -14,15 +16,17 @@ database.connect();
 
 
 const app = express(); //khoi tao app dung express
-
+app.use(express.static('public')); //de nhung file tinh vao, day la code cua FE
 const port = process.env.PORT;
 //   const port = 3000; //khoi tao cong
 
 app.set("views", "./views"); //giao dien
 app.set("view engine", "pug");
 
-app.use(express.static('public')); //de nhung file tinh vao, day la code cua FE
 
+
+//Routes admin:
+routesAdmin(app);
 
 //Routes client:
 routesClient(app);
