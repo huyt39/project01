@@ -2,6 +2,8 @@ const express = require("express"); //nhung express
 const dotenv = require("dotenv"); //import dotenv tu thu vien dotenv
 // const mongoose = require("mongoose");
 const database = require("./config/database.js");
+const systemConfig = require("./config/system.js");
+
 
 require("dotenv").config(); //de cau hinh
 
@@ -22,6 +24,9 @@ const port = process.env.PORT;
 
 app.set("views", "./views"); //giao dien
 app.set("view engine", "pug");
+
+//App Local Variables
+app.locals.prefixAdmin = systemConfig.prefixAdmin; //o bat cu dau cung dung duoc bien nay
 
 
 
